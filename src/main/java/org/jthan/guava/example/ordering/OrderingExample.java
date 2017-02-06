@@ -1,15 +1,13 @@
 package org.jthan.guava.example.ordering;
 
+import static org.junit.Assert.assertEquals;
+
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import com.google.common.primitives.Ints;
-import org.junit.Test;
-
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 
 /**
@@ -18,13 +16,12 @@ public class OrderingExample {
 
     @Test
     //MIN VALUE
-    public void order_list_of_strings_alphabetically_case_insensitive () {
+    public void order_list_of_strings_alphabetically_case_insensitive() {
 
         List<String> TOP_RATED_CENTERS = Lists.newArrayList(
                 "Dawson", "Gatski", "Langer", "Hein",
                 "Frankie Baggadonuts", "Turner", "Trafton",
                 "Stephenson", "Ringo", "Otto", "Webster");
-
 
         String topNameAlphabetically = Ordering
                 .from(String.CASE_INSENSITIVE_ORDER)//order from a exist Comparator strategy
@@ -35,7 +32,7 @@ public class OrderingExample {
 
     @Test
     //MAX VALUE
-    public void find_max_value_from_list_of_integers_guava () {
+    public void find_max_value_from_list_of_integers_guava() {
 
         List<Integer> top10CentersNumbers = Lists.newArrayList(
                 63, 52, 62, 0, 66, 0, 57, 51, 60
@@ -45,11 +42,11 @@ public class OrderingExample {
                 .natural()//order use natural
                 .max(top10CentersNumbers);
 
-        assertEquals(new Integer (66), maxJerseyNumber);
+        assertEquals(new Integer(66), maxJerseyNumber);
     }
 
     @Test
-    public void order_elements_based_on_length () {
+    public void order_elements_based_on_length() {
 
         //definite a order strategy
         Ordering<String> byLength = new Ordering<String>() {
@@ -84,7 +81,6 @@ public class OrderingExample {
             }
         };
         famousBridges.sort(cp);*/
-
 
         assertEquals("Great Belt Bridge", famousBridges.get(5));
     }
